@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aahmamou <aahmamou@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/09/11 13:00:59 by aahmamou          #+#    #+#             */
+/*   Updated: 2026/09/11 13:00:59 by aahmamou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	is_sep(char c, char sep)
@@ -56,9 +68,9 @@ static char	*copy_word(char const *s, int len)
 
 char	**ft_split(char const *s, char c)
 {
-	char **split;
-	int i;
-	int j;
+	char	**split;
+	int		i;
+	int		j;
 
 	split = malloc(sizeof(char *) * (word_count(c, s) + 1));
 	if (!split)
