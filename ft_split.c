@@ -12,11 +12,6 @@
 
 #include "libft.h"
 
-static int	is_sep(char c, char sep)
-{
-	return (c == sep);
-}
-
 static int	word_count(char c, char const *s)
 {
 	int	i;
@@ -26,12 +21,12 @@ static int	word_count(char c, char const *s)
 	count = 0;
 	while (s[i])
 	{
-		while (s[i] && is_sep(s[i], c))
+		while (s[i] && s[i] == c)
 			i++;
 		if (s[i])
 		{
 			count++;
-			while (s[i] && !is_sep(s[i], c))
+			while (s[i] && s[i] != c)
 				i++;
 		}
 	}
@@ -43,7 +38,7 @@ static int	word_len(char const *s, char c)
 	int	i;
 
 	i = 0;
-	while (s[i] && !is_sep(s[i], c))
+	while (s[i] && s[i] != c)
 		i++;
 	return (i);
 }
@@ -66,6 +61,19 @@ static char	*copy_word(char const *s, int len)
 	return (word);
 }
 
+static void	free_split(char **split, int count)
+{
+	int	i;
+
+	i = 0;
+	while (i < count)
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
@@ -79,13 +87,15 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	while (s[i])
 	{
-		while (s[i] && is_sep(s[i], c))
+		while (s[i] && s[i] == c)
 			i++;
 		if (s[i])
 		{
 			split[j] = copy_word(&s[i], word_len(&s[i], c));
+			if (!split[j])
+				return (free_split(split, j), NULL);
 			j++;
-			while (s[i] && !is_sep(s[i], c))
+			while (s[i] && s[i] != c)
 				i++;
 		}
 	}
