@@ -6,7 +6,7 @@
 /*   By: aahmamou <aahmamou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/11 13:00:58 by aahmamou          #+#    #+#             */
-/*   Updated: 2026/10/11 21:57:03 by aahmamou         ###   ########.fr       */
+/*   Updated: 2026/10/11 22:05:15 by aahmamou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ static int	iswhitespace(char c)
 
 int	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	sign;
-	int	result;
+	int		i;
+	int		sign;
+	long	result;
 
 	i = 0;
 	result = 0;
