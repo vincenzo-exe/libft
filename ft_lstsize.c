@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+unsigned int	ft_lstsize(t_list *lst)
 {
-	t_list	*temp;
-	int		count;
+	t_list			*temp;
+	unsigned int	count;
 
 	temp = lst;
 	count = 0;
