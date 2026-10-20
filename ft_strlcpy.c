@@ -6,7 +6,7 @@
 /*   By: aahmamou <aahmamou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/11 13:00:59 by aahmamou          #+#    #+#             */
-/*   Updated: 2026/10/11 21:58:14 by aahmamou         ###   ########.fr       */
+/*   Updated: 2026/10/14 12:12:50 by aahmamou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 	size_t	len;
 
-	i = 0;
 	len = 0;
 	while (src[len])
 		len++;

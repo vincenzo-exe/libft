@@ -6,7 +6,7 @@
 /*   By: aahmamou <aahmamou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/11 13:00:59 by aahmamou          #+#    #+#             */
-/*   Updated: 2026/10/11 21:58:04 by aahmamou         ###   ########.fr       */
+/*   Updated: 2026/10/14 12:25:13 by aahmamou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static char	*copy_word(char const *s, int len)
 	return (word);
 }
 
-static void	free_split(char **split, int count)
+static char	**free_split(char **split, int count)
 {
 	int	i;
 
@@ -72,6 +72,7 @@ static void	free_split(char **split, int count)
 		i++;
 	}
 	free(split);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
@@ -93,7 +94,7 @@ char	**ft_split(char const *s, char c)
 		{
 			split[j] = copy_word(&s[i], word_len(&s[i], c));
 			if (!split[j])
-				return (free_split(split, j), NULL);
+				return (free_split(split, j));
 			j++;
 			while (s[i] && s[i] != c)
 				i++;
