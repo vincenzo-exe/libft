@@ -6,7 +6,7 @@
 /*   By: aahmamou <aahmamou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/11 13:00:59 by aahmamou          #+#    #+#             */
-/*   Updated: 2026/10/20 09:41:01 by aahmamou         ###   ########.fr       */
+/*   Updated: 2026/10/21 21:11:37 by aahmamou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char		*dest;
-	const char	*source;
-	size_t		i;
+	unsigned char		*dest;
+	const unsigned char	*source;
+	size_t				i;
 
 	if (!dst || !src)
 		return (NULL);
